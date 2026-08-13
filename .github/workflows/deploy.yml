@@ -1,0 +1,46 @@
+name: Deploy Multi-Domain Projects
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Random Colors
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Random-Color 
+          branch: gh-pages-one 
+
+      - name: Sidebar Menu
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Sidebar-Menu  
+          branch: gh-pages-two  
+
+      - name: Simon Says Game
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Simon-Says-Game   
+          branch: gh-pages-three  
+
+      - name: Spotify Clone
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Spotify-Clone 
+          branch: gh-pages-four
+
+      - name: Todo App
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Todo-App 
+          branch: gh-pages-five
