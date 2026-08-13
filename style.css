@@ -1,0 +1,55 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin: 1rem 1.5rem;
+}
+
+h3{
+    text-align: center;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2.5rem;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.red{
+    background-color: #d95980;
+}
+
+.green{
+    background-color: #63aac0;
+}
+
+.purple{
+    background-color:#819ff9;
+}
+
+.yellow{
+    background-color: #f99b45;
+}
+
+.game-flash{
+    background-color: white;
+}
+
+.user-flash{
+    opacity: 0.8;
+}
