@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <table border="1">
+        <tr> 
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        <% for(let result of results) { %>
+            <tr>
+                <td><%= result.userId %></td>
+                <td><%= result.username %></td>
+                <td><%= result.email %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
