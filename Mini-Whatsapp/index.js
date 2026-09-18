@@ -1,8 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Chat = require("./models/chats.js");
+const Chat = require("./models/chats");
 const path = require("path");
 const methodOverride = require("method-override");
+const ExpressError = require("./ExpressError");
 
 const app = express();
 const port = 8080;
@@ -55,6 +56,15 @@ app.post("/chats", async (req, res) => {
   res.redirect("/chats");
 });
 
+app.get("/chats/:id", async (req, res, next) => {
+  let { id } = req.params;
+  let chat = await Chat.findById(id);
+  if(!chat){
+    next(new ExpressError(404,"Chat not Found"));
+  }
+  res.render("show.ejs", { chat });
+}); 
+
 app.get("/chats/:id/edit", async (req, res) => {
   let { id } = req.params;
   let chat = await Chat.findById(id);
@@ -72,4 +82,9 @@ app.delete("/chats/:id", async (req, res) => {
   let { id } = req.params;
   await Chat.findByIdAndDelete(id);
   res.redirect("/chats");
+});
+
+app.use((err,req,res,next)=>{
+  let {status=500,message="Some Error Occured"} = err;
+  res.status(status).send(message);
 });

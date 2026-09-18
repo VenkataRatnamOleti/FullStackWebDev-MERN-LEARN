@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp</title>
+</head>
+<body>
+    <div class="chat"> 
+        <div class="msg">
+            <p><%= chat.message %></p>
+        </div>
+        <p>From : <i><%= chat.from %></i></p>
+        <p>To : <i><%= chat.to %></i></p>
+        <hr>
+        created_at: <%= chat.created_at.toString().split(" ")[4] %>   
+        <hr>
+    </div>
+
+</body>
+</html>
