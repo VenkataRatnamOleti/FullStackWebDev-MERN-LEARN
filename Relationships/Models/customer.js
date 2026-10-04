@@ -34,7 +34,7 @@ const Customer = mongoose.model("Customer", customerSchema);
 const findFullCustomers = async () => {
   let customers = await Customer.find({}).populate("orders");
   console.log(customers[0]);
-}
+};
 
 findFullCustomers();
 
