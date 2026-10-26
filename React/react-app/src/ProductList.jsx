@@ -1,13 +1,13 @@
-import Product from './Product'
+import Product from "./Product";
 
 function ProductList() {
-    return (
-        <>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-        </>
-    )
+//   let options = [<li>Hi-Tech</li>, <li>durable</li>, <li>fast</li>]; option-1
+let options = ["Hi-Tech","Durable","Fast"];
+  return (
+    <>
+      <Product features={options}></Product>
+    </>
+  );
 }
 
 export default ProductList;
