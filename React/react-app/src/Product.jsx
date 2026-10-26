@@ -1,21 +1,21 @@
 import "./Product.css";
+import Price from "./Price";
 
-function Product({
-  title = "TITLE",
-  description = "DESCRIPTION",
-  price = 0,
-  features,
-}) {
-  let isDiscount = price > 2000;
-  const List = features.map((feature) => <li>{feature}</li>);
-  let styles = {backgroundColor: isDiscount ? "yellow" : ""};
+function Product({ title, price, features }) {
+  const styles = {
+    border: "1px solid black",
+    borderRadius: "25px",
+    width: "20rem",
+    textAlign: "center",
+    backgroundColor: "skyblue",
+  };
   return (
-    <div className="Product" style={styles}>
-      <h3>{title}</h3>
-      <h5>{description}</h5>
-      <h6>Price: {price}</h6>
-      <p>{isDiscount && <i>5% Discount Added</i>}</p>
-      <p>{List}</p>
+    <div style={styles}>
+      <h4>{title}</h4>
+      {features.map((feature) => (
+        <p>{feature}</p>
+      ))}
+      <Price price={price}></Price>
     </div>
   );
 }

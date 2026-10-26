@@ -1,4 +1,9 @@
-export default function Activity({ userName, textColor }) {
-  const styles = { color: textColor };
-  return <h1 style={styles}>Hello, {userName}</h1>;
+import ProductList from './ProductList.jsx';
+export default function Activity() {
+    return (
+        <>
+            <h1>Blockbuster Deals on Computer Accessories | Shop Now</h1>
+            <ProductList/>
+        </>
+    )
 }
