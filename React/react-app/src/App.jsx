@@ -1,13 +1,12 @@
 import './App.css'
-import ProductList from './ProductList.jsx';
-import Product from './Product.jsx';
-import Title from './Title.jsx';
+import Activity from './Activity';
 function App() {
   return (
     <>
-      <ProductList></ProductList>
+      <Activity userName="Venkat" textColor="red"></Activity>
+      <Activity userName="Ratnam" textColor="white"></Activity>
     </>
-  )
+  );
 }
 
 export default App

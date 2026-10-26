@@ -6,6 +6,7 @@ let options = ["Hi-Tech","Durable","Fast"];
   return (
     <>
       <Product features={options}></Product>
+      <Product features={options} price={40000}></Product>
     </>
   );
 }
