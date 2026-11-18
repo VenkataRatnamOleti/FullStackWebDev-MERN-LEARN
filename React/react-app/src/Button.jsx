@@ -1,16 +1,28 @@
-function print(){
-    console.log("Hello!");
+function handleClick() {
+  console.log("Hello!");
 }
 
-function printPara(){
-    console.log("Paragraph")
+function handleHover() {
+  console.log("Paragraph");
 }
 
-export default function Button(){
-    return(
-        <div>
-            <button onClick={print}>Click Me</button>
-            <p onClick={printPara}>This Parah is for event demo</p>
-        </div>
-    )
+function handleDblClick(){
+    console.log("Double Click");
+}
+
+export default function Button() {
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+      <p onMouseOver={handleHover}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed odio
+        maiores voluptatem nihil recusandae aperiam. Excepturi iste ea nihil
+        illum sed harum qui id omnis quibusdam provident molestias atque cum
+        repudiandae soluta eligendi aspernatur in sequi ab iusto, suscipit sint
+        accusantium? Et dignissimos voluptates, vel suscipit possimus totam ut
+        deleniti!
+      </p>
+      <button onDoubleClick={handleDblClick}>Double Click Button</button>
+    </div>
+  );
 }
