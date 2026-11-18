@@ -1,9 +1,9 @@
 import './App.css'
-import Activity from './Activity';
+import Button from './Button';
 function App() {
   return (
     <>
-      <Activity></Activity>
+      <Button></Button>
     </>
   );
 }
