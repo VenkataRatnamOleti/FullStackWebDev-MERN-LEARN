@@ -1,16 +1,18 @@
 import { useState } from "react"
 
 export default function Counter(){
-    let [count, setCounter] = useState(0); //initialize
-    console.log("Component is Re-Rendered!");
-    console.log(`count = ${count}`);
-
+    let [count, setCounter] = useState(0);
     function incCount(){
-        console.log(`inside incCount before count = ${count}`);
-        setCounter(count+1);
-        console.log(`inside incCount after count = ${count}`);
-    }
+        // setCounter(count+1);
+        // setCounter(count+1); will not work
 
+        setCounter((currCount) => {
+            return currCount+1;
+        });
+        setCounter((currCount) => {
+            return currCount+1;
+        });
+    }
     return (
         <div>
             <p>Count = {count}</p>
