@@ -1,12 +1,10 @@
 import "./App.css";
-import Counter from './Counter';
-import LikeButtion from "./LikeButton";
+import Ludo from "./Ludo"; 
 
 function App() {
   return (
     <>
-      <Counter/>
-      <LikeButtion/>
+      <Ludo/>
     </>
   );
 }
