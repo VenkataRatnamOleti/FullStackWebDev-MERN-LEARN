@@ -1,4 +1,4 @@
-export default function TodoItem({Item: data}){
+export default function TodoItem({data, id}){
     return (
         <li>{data}</li>
     );
