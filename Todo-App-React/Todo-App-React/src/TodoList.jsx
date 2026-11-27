@@ -21,6 +21,32 @@ export default function TodoList() {
     setTodo((prevTodo) => todo.filter((prevTodo) => prevTodo.id != id));
   };
 
+  let upperCaseAll = () => {
+    setTodo((prevTodo) =>
+      prevTodo.map((task) => {
+        return {
+          ...task,
+          value: task.value.toUpperCase(),
+        };
+      }),
+    );
+  };
+
+  let upperCaseOne = (id) => {
+    setTodo((prevTodo) =>
+      prevTodo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            value: task.value.toUpperCase(),
+          };
+        } else {
+          return task;
+        }
+      }),
+    );
+  };
+
   return (
     <div>
       <div>
@@ -41,9 +67,12 @@ export default function TodoList() {
               data={task.value}
               key={task.id}
               onClickHandler={() => deleteTodo(task.id)}
+              toUpperCase={() => upperCaseOne(task.id)}
             />
           ))}
         </ul>
+        <br />
+        <button onClick={upperCaseAll}>To UpperCase All</button>
       </div>
     </div>
   );
