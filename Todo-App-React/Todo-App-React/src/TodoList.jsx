@@ -3,12 +3,14 @@ import TodoItem from "./TodoItem";
 import { v1 as uuid } from "uuid";
 
 export default function TodoList() {
-  let [todo, setTodo] = new useState([{ id: uuid(), value: "Initial Task" }]);
+  let [todo, setTodo] = new useState([
+    { id: uuid(), value: "Initial Task", isDone: false },
+  ]);
   let [newTodo, setNewTodo] = useState("");
 
   function addTodo() {
     setTodo((prevTodo) => {
-      return [...prevTodo, { id: uuid(), value: newTodo }];
+      return [...prevTodo, { id: uuid(), value: newTodo, isDone: false }];
     });
     setNewTodo("");
   }
@@ -47,6 +49,21 @@ export default function TodoList() {
     );
   };
 
+  let toMarkAsDone = (id) => {
+    setTodo((prevTodo) =>
+      prevTodo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            isDone: true,
+          };
+        } else {
+          return task;
+        }
+      }),
+    );
+  };
+
   return (
     <div>
       <div>
@@ -68,6 +85,8 @@ export default function TodoList() {
               key={task.id}
               onClickHandler={() => deleteTodo(task.id)}
               toUpperCase={() => upperCaseOne(task.id)}
+              toMarked={() => toMarkAsDone(task.id)}
+              isDone={task.isDone}
             />
           ))}
         </ul>
