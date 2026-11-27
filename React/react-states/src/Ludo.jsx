@@ -8,10 +8,17 @@ export default function Ludo() {
     yellow: 0,
   });
 
+  let [arr, setArr] = new useState(["no moves"]);
+
   function updateBlue() {
-    setMoves((prevMoves) => {
-      return { ...prevMoves, blue: prevMoves.blue + 1 };
-    }); // Spreading of Object is needed
+    // setMoves((prevMoves) => {
+    //   return { ...prevMoves, blue: prevMoves.blue + 1 };
+    // }); // Spreading of Object is needed
+
+    setArr((prevArr) => {
+      return [...prevArr, "blue"];
+    });
+    console.log(arr);
   }
 
   function updateRed() {
@@ -34,6 +41,7 @@ export default function Ludo() {
   return (
     <div>
       <p>Game Begins!</p>
+      <p>{arr}</p>
       <div className="board">
         <p>Blue = {moves.blue}</p>
         <button style={{ backgroundColor: "blue" }} onClick={updateBlue}>
