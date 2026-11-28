@@ -1,14 +1,14 @@
-.lottery{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.lottery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.lottery button{
-    background-color: violet;
-    color: black;
-    border: 1px solid violet;
-    border-radius: 14px;
-    padding: 0.1rem 1rem;
+.lottery button {
+  background-color: violet;
+  color: black;
+  border: 1px solid violet;
+  border-radius: 14px;
+  padding: 0.1rem 1rem;
 }
