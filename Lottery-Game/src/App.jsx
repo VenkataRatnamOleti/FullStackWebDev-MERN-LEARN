@@ -1,12 +1,11 @@
 
 import './App.css'
+import Lottery from './Lottery';
 
 function App() {
   return (
-    <div>
-      <h2>Lottery Game</h2>
-    </div>
-  )
+    <Lottery/>
+  );
 }
 
 export default App
