@@ -64,6 +64,17 @@ export default function TodoList() {
     );
   };
 
+  let markAsDoneAll = () => {
+    setTodo((prevTodo) =>
+      prevTodo.map((task) => {
+        return {
+          ...task,
+          isDone: true,
+        };
+      }),
+    );
+  };
+
   return (
     <div>
       <div>
@@ -92,6 +103,8 @@ export default function TodoList() {
         </ul>
         <br />
         <button onClick={upperCaseAll}>To UpperCase All</button>
+        <br />
+        <button onClick={markAsDoneAll}>Mark as Done All</button>
       </div>
     </div>
   );
