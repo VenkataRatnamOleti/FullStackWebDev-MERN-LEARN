@@ -77,7 +77,7 @@ export default function TodoList() {
 
   return (
     <div>
-      <div>
+      <div className="form">
         <input
           type="text"
           value={newTodo}
@@ -86,10 +86,11 @@ export default function TodoList() {
         />
         &nbsp;
         <button onClick={addTodo}>Add</button>
-        <br />
-        <br />
+      </div>
+      <hr />
+      <div className="todo-list">
         <h2>Tasks Todo</h2>
-        <ul>
+        <ol>
           {todo.map((task) => (
             <TodoItem
               data={task.value}
@@ -100,9 +101,10 @@ export default function TodoList() {
               isDone={task.isDone}
             />
           ))}
-        </ul>
-        <br />
-        <button onClick={upperCaseAll}>To UpperCase All</button>
+        </ol>
+      </div>
+      <div className="operation-btns">
+        <button onClick={upperCaseAll}>UpperCase All</button>
         <br />
         <button onClick={markAsDoneAll}>Mark as Done All</button>
       </div>
